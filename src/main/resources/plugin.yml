@@ -1,0 +1,8 @@
+name: DeathChests
+version: '0.0.0'
+main: me.truedarklord.deathChests.DeathChests
+api-version: '1.20'
+authors: [ TrueDarkLord ]
+description: "Spawn in a chest on death with all of the player's items in it."
+
+folia-supported: true
