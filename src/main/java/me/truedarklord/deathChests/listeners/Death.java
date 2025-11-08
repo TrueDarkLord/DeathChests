@@ -5,18 +5,23 @@ import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.block.Container;
+import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.plugin.Plugin;
 
 import java.util.List;
 
 public class Death implements Listener {
 
+    private final Plugin plugin;
+
     public Death(DeathChests plugin) {
+        this.plugin = plugin;
         plugin.getServer().getPluginManager().registerEvents(this, plugin);
     }
 
@@ -29,6 +34,13 @@ public class Death implements Listener {
             setInvDrops(findEmptyBlock(loc), drops);
         }
 
+        sendDeathMessage(event.getEntity(), loc);
+
+    }
+
+    private void sendDeathMessage(Player player, Location loc) {
+        String msg = plugin.getConfig().getString("Death_Message", "You Died at %location%.");
+        player.sendMessage(msg.replaceAll("%location%", loc.toString()));
     }
 
     private Block findEmptyBlock(Location loc) {
