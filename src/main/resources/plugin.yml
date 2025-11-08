@@ -1,8 +1,13 @@
 name: DeathChests
-version: '0.0.0'
+version: '${version}'
 main: me.truedarklord.deathChests.DeathChests
 api-version: '1.20'
 authors: [ TrueDarkLord ]
 description: "Spawn in a chest on death with all of the player's items in it."
+commands:
+  reload:
+    permission: deathchests.reload
+    usage: /Reload
+    description: Reloads the config.
 
 folia-supported: true
