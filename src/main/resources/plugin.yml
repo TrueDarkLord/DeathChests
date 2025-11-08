@@ -1,5 +1,5 @@
 name: DeathChests
-version: '0.0.0'
+version: '${version}'
 main: me.truedarklord.deathChests.DeathChests
 api-version: '1.20'
 authors: [ TrueDarkLord ]
