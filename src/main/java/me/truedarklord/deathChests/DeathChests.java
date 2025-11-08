@@ -10,6 +10,7 @@ public final class DeathChests extends JavaPlugin {
     public void onEnable() {
         Metrics metrics = new Metrics(this, 26017);
 
+        saveDefaultConfig();
         advertise();
 
         new Death(this);
