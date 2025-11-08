@@ -39,8 +39,12 @@ public class Death implements Listener {
     }
 
     private void sendDeathMessage(Player player, Location loc) {
-        String msg = plugin.getConfig().getString("Death_Message", "You Died at %location%.");
-        player.sendMessage(msg.replaceAll("%location%", loc.toString()));
+        String msg = plugin.getConfig().getString("Death_Message", "You Died at %world% X:%x% Y:%y% Z:%z%.");
+        msg = msg.replaceAll("%x%", String.valueOf(loc.getX()))
+             .replaceAll("%y%", String.valueOf(loc.getX()))
+             .replaceAll("%z%", String.valueOf(loc.getZ()));
+        
+        player.sendMessage(msg);
     }
 
     private Block findEmptyBlock(Location loc) {

@@ -1,1 +1,1 @@
-Death_Message: "You Died at %location%."
+Death_Message: "You Died at %world% X:%x% Y:%y% Z:%z%."
