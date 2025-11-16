@@ -2,7 +2,7 @@ package me.truedarklord.deathChests;
 
 import me.truedarklord.deathChests.commands.Reload;
 import me.truedarklord.deathChests.listeners.Death;
-import me.truedarklord.deathChests.metrics.Metrics;
+import org.bstats.bukkit.Metrics;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class DeathChests extends JavaPlugin {
