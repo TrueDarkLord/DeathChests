@@ -1,7 +1,7 @@
 package me.truedarklord.deathChests.listeners;
 
 import me.truedarklord.deathChests.DeathChests;
-import me.truedarklord.deathChests.events.DeathChestEvent;
+import me.truedarklord.deathChests.events.PreDeathChestEvent;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
@@ -28,7 +28,7 @@ public class Death implements Listener {
         Location loc = event.getEntity().getLocation().clone();
         List<ItemStack> drops = event.getDrops();
 
-        DeathChestEvent chestEvent = new DeathChestEvent(player, loc, drops);
+        PreDeathChestEvent chestEvent = new PreDeathChestEvent(player, loc, drops);
         if (chestEvent.callEvent()) return;
 
         while (!drops.isEmpty()) {

@@ -10,7 +10,7 @@ import org.bukkit.inventory.ItemStack;
 
 import java.util.List;
 
-public class DeathChestEvent extends Event implements Cancellable {
+public class PreDeathChestEvent extends Event implements Cancellable {
 
     private static final HandlerList handlers = new HandlerList();
     private boolean cancel;
@@ -19,7 +19,7 @@ public class DeathChestEvent extends Event implements Cancellable {
     private final List<ItemStack> drops;
     private final Location location;
 
-    public DeathChestEvent(Player player, Location location, List<ItemStack> drops) {
+    public PreDeathChestEvent(Player player, Location location, List<ItemStack> drops) {
         this.player = player;
         this.drops = drops;
         this.location = location;

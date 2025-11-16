@@ -1,7 +1,7 @@
 package me.truedarklord.deathChests.listeners;
 
 import me.truedarklord.deathChests.DeathChests;
-import me.truedarklord.deathChests.events.DeathChestEvent;
+import me.truedarklord.deathChests.events.PreDeathChestEvent;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
@@ -22,7 +22,7 @@ public class DeathMessage implements Listener {
     }
 
     @EventHandler(ignoreCancelled = true, priority = EventPriority.MONITOR)
-    public void onDeathChest(DeathChestEvent event) {
+    public void onDeathChest(PreDeathChestEvent event) {
         sendDeathMessage(event.getPlayer(), event.getLocation());
     }
 
