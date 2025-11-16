@@ -1,6 +1,7 @@
 plugins {
     id 'java'
     id("xyz.jpenilla.run-paper") version "2.3.1"
+    id("com.gradleup.shadow") version "9.2.2"
 }
 
 group = 'me.truedarklord'
@@ -30,6 +31,15 @@ tasks {
         // Your plugin's jar (or shadowJar if present) will be used automatically.
         minecraftVersion("1.20")
     }
+}
+
+shadowJar {
+    relocate 'org.bstats', 'me.truedarklord.deathChests.shaded.bstats'
+    archiveClassifier.set('') // Removes "-shadow" from the output JAR name
+}
+
+tasks.build {
+    dependsOn shadowJar
 }
 
 def targetJavaVersion = 17
