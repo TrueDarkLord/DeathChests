@@ -58,11 +58,7 @@ public class Death implements Listener {
     }
 
     private ItemStack removeFirst(List<ItemStack> contents) {
-        ItemStack first = contents.get(0);
-
-        contents.remove(0);
-
-        return first;
+        return contents.remove(0);
     }
 
 }
